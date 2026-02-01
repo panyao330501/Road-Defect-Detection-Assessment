@@ -46,7 +46,6 @@ We compared three baseline models. YOLOv5 achieved the best performance, especia
 | Faster R-CNN | 0.818 | 0.831 |
 | **YOLOv5 (Ours)** | **0.846** | **0.890** |
 
-> *Note: By incorporating "Patch" data, the model's ability to distinguish between actual damage and repairs significantly improved.*
 
 ## 📂 Project Structure
 
@@ -70,24 +69,29 @@ Road-Defect-Detection-Assessment/
 └── requirements.txt           # Dependencies (PyTorch 1.13.1)
 
 
-⚙️ Quick Start
-1. Installation
+## ⚙️ Quick Start
+
+### 1. Installation
 The environment is pinned to versions used during the thesis (2023) for reproducibility.
 
-Bash
+```bash
 pip install -r requirements.txt
-2. Run Evaluation Pipeline
+
+
+### 2. Run Evaluation Pipeline
 This script runs the full detection and assessment flow on a video file.
 
-Bash
+```bash
 python evaluate_pipeline.py \
     --source data/images/test_video.mp4 \
     --weights-yolo weights/best_defect.pt \
     --weights-unet weights/unet_road.pth
-3. Training (Reproduction)
+
+###3. Training (Reproduction)
 To reproduce the training results using the custom hyperparameter config:
 
-Bash
+```bash
 python train.py --img 640 --batch 16 --epochs 100 --data road_defect.yaml --hyp data/hyps/hyp.road.yaml --weights yolov5s.pt
-📝 Acknowledgements
+
+##📝 Acknowledgements
 This project was part of my undergraduate research. Special thanks to the laboratory for providing the raw video data and initial segmentation masks for U-Net training.
