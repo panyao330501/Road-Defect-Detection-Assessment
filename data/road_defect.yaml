@@ -1,0 +1,9 @@
+# RDD config
+
+path: /root/autodl-tmp/datasets/road_defect
+train: /root/autodl-tmp/datasets/road_defect/images/train
+val: /root/autodl-tmp/datasets/road_defect/images/val
+test: /root/autodl-tmp/datasets/road_defect/images/test
+
+nc: 2
+names: ['defect', 'patch']
