@@ -90,12 +90,12 @@ python evaluate_pipeline.py \
     --weights-unet weights/unet_road.pth
 ```
 
-###3. Training (Reproduction)
+### 3. Training (Reproduction)
 To reproduce the training results using the custom hyperparameter config:
 
 ```bash
 python train.py --img 640 --batch 16 --epochs 100 --data road_defect.yaml --hyp data/hyps/hyp.road.yaml --weights yolov5s.pt
 ```
 
-##📝 Acknowledgements
+## 📝 Acknowledgements
 This project was part of my undergraduate research. Special thanks to the laboratory for providing the raw video data and initial segmentation masks for U-Net training.
