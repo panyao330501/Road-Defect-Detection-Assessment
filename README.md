@@ -26,11 +26,6 @@ The system processes video data in four stages:
 3.  **Correction (IPM)**: Transforms the detected ROI (Region of Interest) to a top-down view to remove perspective distortion.
 4.  **Evaluation (U-Net)**: Segments the defect area and calculates severity based on pixel-to-physical metrics.
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/ultralytics/yolov5/master/data/images/bus.jpg" width="400" alt="Sample Detection">
-  <br>
-  <em>Figure: Detection and Severity Assessment Workflow</em>
-</div>
 
 ## 📊 Dataset & Experiments
 
@@ -73,3 +68,26 @@ Road-Defect-Detection-Assessment/
 ├── evaluate_pipeline.py       # Main script: YOLO -> IPM -> UNet
 ├── train.py                   # Training script
 └── requirements.txt           # Dependencies (PyTorch 1.13.1)
+
+
+⚙️ Quick Start
+1. Installation
+The environment is pinned to versions used during the thesis (2023) for reproducibility.
+
+Bash
+pip install -r requirements.txt
+2. Run Evaluation Pipeline
+This script runs the full detection and assessment flow on a video file.
+
+Bash
+python evaluate_pipeline.py \
+    --source data/images/test_video.mp4 \
+    --weights-yolo weights/best_defect.pt \
+    --weights-unet weights/unet_road.pth
+3. Training (Reproduction)
+To reproduce the training results using the custom hyperparameter config:
+
+Bash
+python train.py --img 640 --batch 16 --epochs 100 --data road_defect.yaml --hyp data/hyps/hyp.road.yaml --weights yolov5s.pt
+📝 Acknowledgements
+This project was part of my undergraduate research. Special thanks to the laboratory for providing the raw video data and initial segmentation masks for U-Net training.
