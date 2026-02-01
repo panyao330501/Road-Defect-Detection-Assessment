@@ -67,6 +67,7 @@ Road-Defect-Detection-Assessment/
 ├── evaluate_pipeline.py       # Main script: YOLO -> IPM -> UNet
 ├── train.py                   # Training script
 └── requirements.txt           # Dependencies (PyTorch 1.13.1)
+```
 
 
 ## ⚙️ Quick Start
