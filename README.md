@@ -47,29 +47,6 @@ We compared three baseline models. YOLOv5 achieved the best performance, especia
 | **YOLOv5 (Ours)** | **0.846** | **0.890** |
 
 
-## 📂 Project Structure
-
-```text
-Road-Defect-Detection-Assessment/
-├── data/
-│   ├── hyps/hyp.road.yaml     # Custom hyperparameters for road textures
-│   └── road_defect.yaml       # Dataset configuration (2 classes)
-├── models/
-│   ├── yolo.py                # YOLOv5 architecture
-│   ├── unet_custom.py         # Custom U-Net for segmentation
-│   └── baselines.py           # SSD & Faster R-CNN implementations
-├── utils/
-│   ├── ipm_transform.py       # Inverse Perspective Mapping logic
-│   └── road_dataset.py        # Dataloader for training
-├── runs/
-│   ├── train/                 # Training logs and weights
-│   └── evaluation/            # Output videos with severity assessment
-├── evaluate_pipeline.py       # Main script: YOLO -> IPM -> UNet
-├── train.py                   # Training script
-└── requirements.txt           # Dependencies (PyTorch 1.13.1)
-```
-
-
 ## ⚙️ Quick Start
 
 ### 1. Installation
@@ -78,7 +55,6 @@ The environment is pinned to versions used during the thesis (2023) for reproduc
 ```bash
 pip install -r requirements.txt
 ```
-
 
 ### 2. Run Evaluation Pipeline
 This script runs the full detection and assessment flow on a video file.
@@ -90,7 +66,7 @@ python evaluate_pipeline.py \
     --weights-unet weights/unet_road.pth
 ```
 
-### 3. Training (Reproduction)
+### 3. Training 
 To reproduce the training results using the custom hyperparameter config:
 
 ```bash
